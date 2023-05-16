@@ -14,3 +14,10 @@ def smartphones(request: HttpRequest) -> JsonResponse:
         })
 
     return JsonResponse({'result': result})
+
+
+def add_smartphone(request: HttpRequest) -> JsonResponse:
+    # p = Smartphones(name=)
+    # p.save()
+    # return
+    pass
