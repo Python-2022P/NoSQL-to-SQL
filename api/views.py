@@ -52,8 +52,30 @@ def get_smartphone(request: HttpRequest,id) -> JsonResponse:
 
 
 def del_smartphone(request: HttpRequest,id) -> JsonResponse:
-    pass
+    smartphones = Smartphones.objects.all()
+
+    for i in smartphones:
+        if i.id==id:
+            i.delete()
+            return JsonResponse({"result": "OK"})
+    
+    return JsonResponse({"result": "not found"})
+
 
 
 def upd_smartphone(request: HttpRequest,id) -> JsonResponse:
-    pass
+    if request.method == 'POST':
+        data = request.body.decode()
+        data_json = json.loads(data)
+
+        smartphones = Smartphones.objects.all()
+
+        for i in smartphones:
+            if i.id==id:
+                i.price=data_json['price']
+
+                i.save()
+
+                return JsonResponse({"result": "OK"})
+
+        return JsonResponse({"result": "not found"})
