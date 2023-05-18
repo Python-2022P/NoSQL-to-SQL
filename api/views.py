@@ -48,3 +48,12 @@ def get_smartphone(request: HttpRequest,id) -> JsonResponse:
             }
 
     return JsonResponse({"result": result})
+
+
+
+def del_smartphone(request: HttpRequest,id) -> JsonResponse:
+    pass
+
+
+def upd_smartphone(request: HttpRequest,id) -> JsonResponse:
+    pass
