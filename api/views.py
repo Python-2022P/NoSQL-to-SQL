@@ -72,7 +72,13 @@ def upd_smartphone(request: HttpRequest,id) -> JsonResponse:
 
         for i in smartphones:
             if i.id==id:
-                i.price=data_json['price']
+                i.price=data_json.get('price', i.price)
+                i.memory=data_json.get('memory', i.memory)
+                i.ram=data_json.get('ram', i.ram)
+                i.color=data_json.get('color', i.color)
+                i.img_url=data_json.get('img_url', i.img_url)
+                i.name=data_json.get('name', i.name)
+                i.model=data_json.get('model', i.model)
 
                 i.save()
 
