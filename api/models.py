@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Smartphones(models.Model):
     price = models.CharField(max_length=255)
     img_url = models.CharField(max_length=255)

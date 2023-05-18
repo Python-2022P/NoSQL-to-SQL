@@ -1,8 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.http import HttpRequest, JsonResponse
-
 from .models import Smartphones
 
 def smartphones(request: HttpRequest) -> JsonResponse:
